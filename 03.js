@@ -10,7 +10,10 @@
  */
 
 // TODO: squareElements 함수를 작성하세요.
-function squareElements() {}
+function squareElements(arr) {
+  const newArr = arr.map((x) => x * x);
+  return newArr;
+}
 
 // export를 수정하지 마세요.
 export { squareElements };
