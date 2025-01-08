@@ -13,13 +13,18 @@
 // TODO: calculateStatistics 함수를 작성하세요.
 function calculateStatistics(users) {
   // TODO
-  let averageAge = users.reduce(function (acc, cur) {
-    return acc + cur.age;
-  }, 0);
-  averageAge /= users.length;
-  let maxAge = users.reduce(function (acc, cur) {
-    return Math.max(acc, cur.age);
-  }, 0);
+  let [averageAge, maxAge] = [0, 0];
+
+  if (users.length !== 0) {
+    averageAge = users.reduce(function (acc, cur) {
+      return acc + cur.age;
+    }, 0);
+    averageAge /= users.length;
+
+    maxAge = users.reduce(function (acc, cur) {
+      return Math.max(acc, cur.age);
+    }, users[0].age);
+  }
   return { averageAge, maxAge };
 }
 
