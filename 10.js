@@ -31,6 +31,16 @@
 
 function groupBy(arr, key) {
   // 여기에 코드를 작성하세요.
+  return arr.reduce((preV, curV) => {
+    let group = curV[key];
+
+    if (preV[group] === undefined) {
+      preV[group] = [];
+    }
+
+    preV[group].push(curV);
+    return preV;
+  }, {});
 }
 
 // export를 수정하지 마세요.
